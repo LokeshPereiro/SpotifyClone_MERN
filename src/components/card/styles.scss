@@ -1,0 +1,75 @@
+.cardContainer {
+  padding: 1rem;
+  .cardOptions,
+  .cardOptions_focus {
+    background-color: var(--tertiary_bg);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .cardOptions_focus {
+    margin-top: 1rem;
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1.5rem;
+  background-color: var(--tertiary_bg);
+  padding: 1rem;
+  .cards_items {
+    padding: 0.8rem;
+    box-shadow: 0.01rem 0.01rem 1rem var(--dark);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.3rem;
+    transition: all 300ms ease;
+    cursor: pointer;
+    position: relative;
+
+    .overlayBtn {
+      display: none;
+    }
+
+    &:hover {
+      background-color: var(--dark);
+
+      .overlayBtn {
+        display: block;
+        z-index: 10;
+        position: absolute;
+        padding: 1rem;
+        top: 8.6rem;
+        right: 1.5rem;
+        font-size: 1rem;
+        background-color: var(--green);
+        border-radius: 50%;
+        color: var(--dark);
+      }
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    .cards_items-desc {
+      font-size: 1rem;
+      h2 {
+        font-weight: bold;
+      }
+      p {
+        color: var(--gray);
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
