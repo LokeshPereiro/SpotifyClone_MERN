@@ -3,6 +3,7 @@ import Layout from "../../layout/Layout";
 import "./styles.scss";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Card from "../card/Card";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <Layout>
@@ -16,8 +17,12 @@ const Home = () => {
           </span>
         </div>
         <div className="home_signings">
-          <button>Sign up</button>
-          <button>Log in</button>
+          <Link to="/signup" className="btn">
+            Sign up
+          </Link>
+          <Link className="btn" to="/login">
+            Log in
+          </Link>
         </div>
       </div>
       <div className="home_cards">
