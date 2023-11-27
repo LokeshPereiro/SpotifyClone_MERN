@@ -8,6 +8,15 @@ import {
   top2010,
   vivaLatino,
   spotify,
+  card,
+  alone,
+  madrid,
+  arca10Mil,
+  nonstop,
+  pokerface,
+  liberianGirl,
+  greedy,
+  dreams,
 } from "../assets";
 
 const randomPlaylist = [
@@ -52,4 +61,64 @@ const randomPlaylist = [
     image: hits80,
   },
 ];
-export { randomPlaylist, spotify };
+
+const randomSongs = [
+  {
+    id: Math.random() * Date.now(),
+    title: "Greedy",
+    artist: "Tate McRae",
+    image: card,
+    mp3: new Audio(greedy),
+  },
+
+  {
+    id: Math.random() * Date.now(),
+    title: "NonStop",
+    artist: "Drake",
+    image: card,
+    mp3: new Audio(nonstop),
+  },
+  {
+    id: Math.random() * Date.now(),
+    title: "Poker Face",
+    artist: "Lady Gaga",
+    image: card,
+    mp3: new Audio(pokerface),
+  },
+  {
+    id: Math.random() * Date.now(),
+    title: "Dreams",
+    artist: "The Camberries",
+    image: card,
+    mp3: new Audio(dreams),
+  },
+  {
+    id: Math.random() * Date.now(),
+    title: "Alone",
+    artist: "Alan Walker & Ava Max",
+    image: card,
+    mp3: new Audio(alone),
+  },
+  {
+    id: Math.random() * Date.now(),
+    title: "Arca 10 Mil",
+    artist: "Arcangel & Feid",
+    image: card,
+    mp3: new Audio(arca10Mil),
+  },
+  {
+    id: Math.random() * Date.now(),
+    title: "Masdrid City",
+    artist: "Ana Mena",
+    image: card,
+    mp3: new Audio(madrid),
+  },
+  {
+    id: Math.random() * Date.now(),
+    title: "Liberian Girl",
+    artist: "Michael Jackson",
+    image: card,
+    mp3: new Audio(liberianGirl),
+  },
+];
+export { randomPlaylist, spotify, randomSongs };

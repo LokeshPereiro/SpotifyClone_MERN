@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 import Signup from "./Signup";
 import { spotify } from "../../constants";
+import SongBar from "../song-bar/SongBar";
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -56,7 +57,8 @@ const Sidebar = () => {
         <TbWorld />
         <span>English</span>
       </button>
-      <Signup />
+      {/* <Signup /> */}
+      <SongBar />
     </div>
   );
 };
