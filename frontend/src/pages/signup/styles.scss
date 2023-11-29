@@ -1,0 +1,239 @@
+.container {
+  min-height: 100vh;
+  padding: 2.5rem;
+  background: var(--white);
+  .logo {
+    text-align: center;
+    img {
+      width: 14rem;
+    }
+  }
+
+  .signup__wrapper {
+    color: var(--dark);
+    .signup__div {
+      padding: 1rem;
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+
+      h1 {
+        padding: 1.2rem;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      p {
+        padding: 1.2rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      form {
+        text-align: center;
+        margin: 0 auto;
+        width: 75%;
+
+        .signupInputs_wrap {
+          width: 80%;
+          margin: 0 auto;
+          padding: 1rem;
+          text-align: start;
+
+          label {
+            font-weight: bold;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+          }
+          input {
+            width: 100%;
+            padding: 1.3rem;
+            border-radius: 1rem;
+            outline: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            background: var(--dark);
+          }
+          small {
+            font-size: 0.8rem;
+          }
+          .extraInfo {
+            display: flex;
+            gap: 2rem;
+            .dayWrapper {
+              width: 25%;
+              color: var(--gray);
+              label {
+                font-size: 0.8rem;
+                display: inline-block;
+                margin-bottom: 0.3rem;
+              }
+              input {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 2rem;
+                outline: none;
+                color: var(--white);
+                font-size: 1.2rem;
+                background: var(--tertiary_bg);
+              }
+            }
+            .monthWrapper {
+              width: 50%;
+              color: var(--gray);
+              label {
+                font-size: 0.8rem;
+                display: inline-block;
+                margin-bottom: 0.3rem;
+              }
+
+              select {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 2rem;
+                outline: none;
+                color: var(--white);
+                font-size: 1.2rem;
+                background: var(--tertiary_bg);
+              }
+            }
+            .yearWrapper {
+              width: 25%;
+              color: var(--gray);
+              label {
+                font-size: 0.8rem;
+                display: inline-block;
+                margin-bottom: 0.3rem;
+              }
+              input {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 2rem;
+                outline: none;
+                color: var(--white);
+                font-size: 1.2rem;
+                background: var(--tertiary_bg);
+              }
+            }
+          }
+          .extraInfo2 {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            .maleWrap {
+              display: flex;
+              label {
+                display: inline-block;
+                margin: 0;
+                margin-right: 0.3rem;
+              }
+            }
+          }
+        }
+
+        .marketing {
+          width: 80%;
+          margin: 0 auto;
+          padding: 1rem;
+          text-align: start;
+
+          .marketing_inputs {
+            margin-top: 1.5rem;
+            display: flex;
+            align-self: center;
+            gap: 2rem;
+            .checkbox_p {
+              font-size: 1rem;
+              padding: 0;
+            }
+            .green-checkbox {
+              position: relative;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              width: 1.5rem;
+              height: 1.5rem;
+              border: 0.2rem solid var(--green);
+              border-radius: 0.4rem;
+              outline: none;
+              transition: all 0.3s ease;
+            }
+
+            .green-checkbox:checked {
+              background-color: var(--green);
+            }
+
+            .green-checkbox:checked::after {
+              content: "\2713";
+              font-size: 14px;
+              color: #fff;
+              position: absolute;
+              top: 2px;
+              left: 6px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          .copyrightAgrs {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            a {
+              color: var(--green);
+            }
+          }
+        }
+        .signinBtn_ {
+          input {
+            width: 70%;
+            padding: 1rem;
+            border-radius: 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            background-color: var(--green);
+            cursor: pointer;
+            transition: all 300ms ease;
+            &:hover {
+              background-color: var(--dark-green);
+            }
+          }
+        }
+      }
+      .separatorLine {
+        width: 75%;
+        border-bottom: 0.03rem solid var(--gray);
+        margin: 0 auto;
+        margin-top: 1.5rem;
+      }
+      .haveAccount {
+        padding-top: 2rem;
+        font-size: 1.1rem;
+        a {
+          color: var(--green);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+.or__ {
+  color: var(--gray);
+  font-size: 1.2rem;
+  position: relative;
+}
+.or__::before {
+  content: "";
+  position: absolute;
+  width: 10rem;
+  left: -11rem;
+  border-bottom: 0.01rem solid var(--gray);
+  bottom: 1rem;
+  margin: 0 auto;
+}
+.or__::after {
+  content: "";
+  position: absolute;
+  width: 10rem;
+  right: -11rem;
+  border-bottom: 0.01rem solid var(--gray);
+  bottom: 1rem;
+}
