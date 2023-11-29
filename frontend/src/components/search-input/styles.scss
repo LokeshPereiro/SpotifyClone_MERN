@@ -1,0 +1,23 @@
+.search {
+  width: 100%;
+  position: relative;
+  input {
+    width: 80%;
+    padding: 1rem;
+    padding-left: 2.6rem;
+    border-radius: 1.5rem;
+    outline: none;
+    background: var(--tertiary_bg);
+    color: var(--white);
+    &:focus {
+      outline: 0.01rem solid var(--white);
+    }
+  }
+  svg {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 1rem;
+    z-index: 2;
+  }
+}

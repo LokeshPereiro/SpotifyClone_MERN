@@ -1,21 +1,23 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { CurrentSongProvider } from "./context/CurrentSongContext";
+import { AppProvider } from "./context/CurrentSongContext";
 import Home from "./components/home/Home";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Search from "./pages/search/Search";
 const App = () => {
   return (
     <Provider store={store}>
-      <CurrentSongProvider>
+      <AppProvider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </BrowserRouter>
         <ToastContainer
@@ -29,7 +31,7 @@ const App = () => {
           newestOnTop={false}
           draggable
         />
-      </CurrentSongProvider>
+      </AppProvider>
     </Provider>
   );
 };

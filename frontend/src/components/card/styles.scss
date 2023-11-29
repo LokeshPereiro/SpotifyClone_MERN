@@ -6,11 +6,17 @@
     font-size: 1rem;
     cursor: pointer;
     padding: 1rem;
-    span {
-      font-size: 1.4rem;
-      font-weight: bold;
-      &:hover {
-        text-decoration: underline;
+    &:first-child {
+      span {
+        margin-top: 4rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span {
+        font-size: 1.4rem;
       }
     }
   }

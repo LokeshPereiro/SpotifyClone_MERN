@@ -1,10 +1,11 @@
-import "./styles.scss";
 import { spotify } from "../../constants";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import { loggedUser } from "../../store/slices/user";
+import "./styles.scss";
+
 const Login = () => {
   const [userDetails, setUserDetails] = useState({
     username: "",
@@ -31,7 +32,7 @@ const Login = () => {
     const data = await res.json();
     if (data.success) {
       toast.success(data.message);
-      localStorage.setItem("loggedUser", data.token);
+      localStorage.setItem("loggedUser", JSON.stringify(data.token));
       dispatch(loggedUser(data));
       navigate("/");
     } else {
@@ -47,6 +48,7 @@ const Login = () => {
       navigate("/");
     }
   }, []);
+
   return (
     <>
       <header>

@@ -1,0 +1,49 @@
+.home_registerOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--dark);
+  width: 75%;
+  height: 5rem;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1000;
+
+  .home_navigationBtns {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .arrows {
+      gap: 0.5rem;
+      font-size: 1.2rem;
+      transition: all ease 300ms;
+      span {
+        padding: 0.5rem;
+        &:hover {
+          background-color: var(--tertiary_bg);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .home_signings {
+    // width: 50%;
+    padding-left: 3rem;
+    .btn_navbar {
+      background-color: var(--white);
+      padding: 0.8rem 1rem;
+      color: var(--dark);
+      font-weight: bold;
+      border-radius: 2rem;
+      font-size: 1rem;
+
+      &:first-child {
+        background-color: transparent;
+        color: var(--white);
+      }
+    }
+  }
+}

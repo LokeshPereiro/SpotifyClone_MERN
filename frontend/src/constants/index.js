@@ -25,6 +25,24 @@ import {
   michael,
   tate,
   thecamberries,
+  chill,
+  pop,
+  rock,
+  latino,
+  workout,
+  danceelectronic,
+  flamenco,
+  foryou,
+  liveEvents,
+  podcast,
+  hiphop,
+  newrelease,
+  party,
+  classic,
+  decades,
+  instrumental,
+  gaming,
+  trending,
 } from "../assets";
 
 const randomPlaylist = [
@@ -129,4 +147,97 @@ const randomSongs = [
     mp3: new Audio(liberianGirl),
   },
 ];
-export { randomPlaylist, spotify, randomSongs };
+const categories = [
+  {
+    title: "Podcast",
+    image: podcast,
+    bgColor: "#006450",
+  },
+
+  {
+    title: "Live Events",
+    image: liveEvents,
+    bgColor: "#8400e7",
+  },
+  {
+    title: "Made For You",
+    image: foryou,
+    bgColor: "#1e3264",
+  },
+  {
+    title: "New Releases",
+    image: newrelease,
+    bgColor: "#e8115b",
+  },
+  {
+    title: "Latin",
+    image: latino,
+    bgColor: "#E1118C",
+  },
+  {
+    title: "Pop",
+    image: pop,
+    bgColor: "#148A08",
+  },
+  {
+    title: "Rock",
+    image: rock,
+    bgColor: "#E91429",
+  },
+  {
+    title: "Hip-Hop",
+    image: hiphop,
+    bgColor: "#503750",
+  },
+  {
+    title: "Flamenco",
+    image: flamenco,
+    bgColor: "#E91429",
+  },
+  {
+    title: "Dance/Electronic",
+    image: danceelectronic,
+    bgColor: "#D84000",
+  },
+  {
+    title: "Workout",
+    image: workout,
+    bgColor: "#777777",
+  },
+  {
+    title: "Chill",
+    image: chill,
+    bgColor: "#006450",
+  },
+  {
+    title: "Party",
+    image: party,
+    bgColor: "#537AA1",
+  },
+  {
+    title: "Decades",
+    image: decades,
+    bgColor: "#BA5D07",
+  },
+  {
+    title: "Gaming",
+    image: gaming,
+    bgColor: "#E8115B",
+  },
+  {
+    title: "Classic",
+    image: classic,
+    bgColor: "#7D4B32",
+  },
+  {
+    title: "Instrumental",
+    image: instrumental,
+    bgColor: "#537AA1",
+  },
+  {
+    title: "Trending",
+    image: trending,
+    bgColor: "#537AA1",
+  },
+];
+export { randomPlaylist, spotify, randomSongs, categories };

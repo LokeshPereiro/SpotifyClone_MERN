@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { spotify } from "../../constants";
 import "./styles.scss";
 import { useState } from "react";
@@ -27,6 +27,8 @@ const Signup = () => {
     password: "",
     gender: "",
   });
+  const navigate = useNavigate();
+
   const onChange = (e) => {
     setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
     if (e.target.name === "gender") {
@@ -45,6 +47,7 @@ const Signup = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     // console.log(userDetails);
+
     const index = months.indexOf(userDetails.month);
     let DOB = `${index}-${userDetails.day}-${userDetails.year}`;
     const { email, password, gender, username } = userDetails;
@@ -78,6 +81,8 @@ const Signup = () => {
         gender: "",
       });
       toast.success(data.message);
+      localStorage.setItem("loggedUser", JSON.stringify(data.token));
+      navigate("/login");
     } else {
       toast.error(data.message);
     }

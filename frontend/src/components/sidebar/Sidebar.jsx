@@ -6,19 +6,21 @@ import { TbWorld } from "react-icons/tb";
 import Signup from "./Signup";
 import { spotify } from "../../constants";
 import SongBar from "../song-bar/SongBar";
+import { Link } from "react-router-dom";
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__home secondary_bg">
         <img src={spotify} />
-        <div className="sidebar__home--icon d_flex">
+        <Link to="/" className="sidebar__home--icon d_flex">
           <BiSolidHome />
           <span>Home</span>
-        </div>
-        <div className="sidebar__home--icon d_flex">
+        </Link>
+        <Link to="/search" className="sidebar__home--icon d_flex">
           <FaSearch />
           <span>Search</span>
-        </div>
+        </Link>
       </div>
       <div className="sidebar__library secondary_bg">
         <div className="sidebar__library--wrap d_flex">

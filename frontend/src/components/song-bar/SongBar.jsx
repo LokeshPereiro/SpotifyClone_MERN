@@ -72,7 +72,6 @@ const SongBar = () => {
     setProgress(evt.target.value);
     currentSong.mp3.currentTime =
       (evt.target.value / 100) * currentSong.mp3.duration;
-    // resetAllSongs();
   };
 
   const [volume, setVolume] = useState(50);
@@ -107,31 +106,29 @@ const SongBar = () => {
 
   const handlePrevSong = () => {
     console.log("prev");
+    // resetAllSongs();
 
     if (currentSong.mp3) {
       currentSong?.mp3?.pause();
       currentSong.mp3.currentTime = 0;
     }
-    resetAllSongs();
-    if (songIdx > 0) {
-      setSongIdx((prev) => prev - 1);
-      dispatch(playRequestedSong(randomSongs[songIdx - 1]));
-    }
+    if (songIdx <= 0) return;
+
+    setSongIdx((prev) => prev - 1);
+    dispatch(playRequestedSong(randomSongs[songIdx - 1]));
   };
   const handleNextSong = () => {
     console.log("next");
-    resetAllSongs();
-
+    // resetAllSongs();
     if (currentSong.mp3) {
       currentSong?.mp3?.pause();
       currentSong.mp3.currentTime = 0;
     }
-    resetAllSongs();
 
-    if (songIdx <= 7 || undefined || null) {
-      setSongIdx((prev) => prev + 1);
-      dispatch(playRequestedSong(randomSongs[songIdx + 1]));
-    }
+    if (songIdx >= 7) return;
+
+    setSongIdx((prev) => prev + 1);
+    dispatch(playRequestedSong(randomSongs[songIdx + 1]));
   };
   return (
     <div className="songbarContainer">

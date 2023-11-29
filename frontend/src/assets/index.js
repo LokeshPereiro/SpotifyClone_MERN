@@ -23,7 +23,6 @@ import greedy from "./songs/TateMcRaeGreedy.mp3";
 import dreams from "./songs/TheCranberriesDreams.mp3";
 
 //Artist
-
 import alaneva from "./artist/AlanEva.jpg";
 import anamena from "./artist/Anamena.jpg";
 import arcangel from "./artist/Arcangel.jpeg";
@@ -32,6 +31,26 @@ import ladygaga from "./artist/Ladygaga.jpg";
 import michael from "./artist/Michael.jpg";
 import tate from "./artist/Tate.jpg";
 import thecamberries from "./artist/Thecamberries.jpg";
+
+//Category Images
+import chill from "./categories/chill.jpg";
+import danceelectronic from "./categories/danceelectronic.jpg";
+import flamenco from "./categories/flamenco.jpg";
+import hiphop from "./categories/hiphop.jpg";
+import foryou from "./categories/foryou.png";
+import latino from "./categories/latino.jpg";
+import liveEvents from "./categories/liveEvents.jpg";
+import newrelease from "./categories/newrelease.jpg";
+import podcast from "./categories/podcast.jpg";
+import pop from "./categories/pop.jpg";
+import rock from "./categories/rock.jpg";
+import workout from "./categories/workout.jpg";
+import party from "./categories/party.jpg";
+import classic from "./categories/classic.jpg";
+import decades from "./categories/decades.jpg";
+import gaming from "./categories/gaming.jpg";
+import trending from "./categories/trending.jpg";
+import instrumental from "./categories/instrumental.jpg";
 
 export {
   card,
@@ -60,4 +79,22 @@ export {
   michael,
   tate,
   thecamberries,
+  chill,
+  pop,
+  rock,
+  latino,
+  workout,
+  danceelectronic,
+  flamenco,
+  foryou,
+  liveEvents,
+  podcast,
+  hiphop,
+  newrelease,
+  party,
+  classic,
+  decades,
+  instrumental,
+  gaming,
+  trending,
 };
