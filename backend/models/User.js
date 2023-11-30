@@ -21,6 +21,14 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  playlists: [
+    {
+      playlist_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+      },
+    },
+  ],
 });
 
 const User = mongoose.model("user", UserSchema);

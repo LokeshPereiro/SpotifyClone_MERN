@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api/user", require("./routes/user"));
+app.use("/api/playlist", require("./routes/playlist"));
 
 const port = 5000 || process.env.PORT;
 
