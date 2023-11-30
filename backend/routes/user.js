@@ -1,17 +1,17 @@
 const express = require("express");
-const User = require("../Models/User");
+const User = require("../models/User");
 const { generateJsonToken } = require("../middlewares/generateJsonToken");
+const jwToken = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
-  console.log(req.body);
-
   const { username, password } = req.body;
 
   try {
     let user = await User.findOne({ username });
-    console.log(user);
+
     if (!user) {
       user = await User.findOne({ email: username });
     }
@@ -19,11 +19,13 @@ router.post("/login", async (req, res) => {
     if (!user) {
       return res.json({ success: false, message: "Invalid Credentials" });
     } else {
-      if (user.password !== password)
+      const verify = await bcrypt.compare(password, user.password);
+
+      if (!verify)
         return res.json({ success: false, message: "Invalid Credentials" });
       else {
         let token = await generateJsonToken(user._id);
-        console.log(token, user);
+        // console.log(token, user);
 
         return res.json({
           success: true,
@@ -39,16 +41,16 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  console.log(req.body);
   const { email, username, password, DOB, gender } = req.body;
 
   if (!email || !username || !password || !DOB || !gender)
     return res.json({ success: false, message: "All fields are required" });
   try {
+    const hashPass = await bcrypt.hash(password, 10);
     const user = await User.create({
       email,
       username,
-      password,
+      password: hashPass,
       DOB,
       gender,
     });
@@ -66,6 +68,31 @@ router.post("/signup", async (req, res) => {
     res.json({ success: false, message: "internal server error" });
   }
 });
+router.get("/profile", async (req, res) => {
+  try {
+    const { token } = req.headers;
+    if (!token)
+      return res
+        .status(401)
+        .json({ success: true, message: "User Unauthorized" });
+
+    const data = jwToken.verify(token, process.env.JWT_SECRET);
+
+    const user = await User.findById(data.id);
+
+    if (user) {
+      return res.json({ user, success: true, message: "User found" });
+    } else {
+      return res.status(404).json({ success: true, message: "User not found" });
+    }
+  } catch (error) {
+    res.json({
+      success: false,
+      message: "Session expired! LogIn again",
+    });
+  }
+});
+
 router.get("/users", async (req, res) => {
   const users = await User.find();
   res.json({ users, success: true, message: "users found" });
