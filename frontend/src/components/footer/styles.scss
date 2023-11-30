@@ -12,18 +12,20 @@
       h3 {
         font-size: 1.2rem;
       }
-      li {
-        font-size: 0.8rem;
-        cursor: pointer;
+      ul {
+        padding-left: 0;
+        li {
+          font-size: 0.8rem;
+          cursor: pointer;
+        }
       }
-      svg {
-        font-size: 1.3rem;
-
-        margin-right: 0.5rem;
-        cursor: pointer;
-      }
-      .legacy {
-        margin-top: 0.3rem;
+      .icons {
+        svg {
+          font-size: 1.3rem;
+          margin-right: 0.5rem;
+          cursor: pointer;
+          margin-bottom: 1rem;
+        }
       }
     }
   }
@@ -35,7 +37,6 @@
   .footer__last-ele {
     h4 {
       font-size: 0.8rem;
-
       text-align: center;
     }
   }

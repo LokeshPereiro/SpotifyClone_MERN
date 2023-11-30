@@ -13,14 +13,14 @@ import spotify from "./spotify.svg";
 import card from "./card.jpg";
 
 //Songs
-import alone from "./songs/AlanWalkerAvaMaxAlone.mp3";
-import madrid from "./songs/AnaMenaMadridCity.mp3";
-import arca10Mil from "./songs/ArcangelFeidArca10Mil.mp3";
-import nonstop from "./songs/DrakeNonstop.mp3";
-import pokerface from "./songs/LadyGagaPokerFace.mp3";
-import liberianGirl from "./songs/MichaelJacksonLiberianGirl.mp3";
-import greedy from "./songs/TateMcRaeGreedy.mp3";
-import dreams from "./songs/TheCranberriesDreams.mp3";
+import alone from "./mp3/AlanWalkerAvaMaxAlone.mp3";
+import madrid from "./mp3/AnaMenaMadridCity.mp3";
+import arca10Mil from "./mp3/ArcangelFeidArca10Mil.mp3";
+import nonstop from "./mp3/DrakeNonstop.mp3";
+import pokerface from "./mp3/LadyGagaPokerFace.mp3";
+import liberianGirl from "./mp3/MichaelJacksonLiberianGirl.mp3";
+import greedy from "./mp3/TateMcRaeGreedy.mp3";
+import dreams from "./mp3/TheCranberriesDreams.mp3";
 
 //Artist
 import alaneva from "./artist/AlanEva.jpg";

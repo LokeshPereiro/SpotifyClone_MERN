@@ -45,6 +45,27 @@ const SongBar = () => {
     }
   };
 
+  const addToLiked = async () => {
+    console.log(currentSong.mp3);
+    let data = JSON.stringify({
+      song_mp3: currentSong.mp3.src,
+      song_title: currentSong.title,
+      song_artist: currentSong.artist,
+      song_thumbnail: currentSong.image,
+    });
+    const res = await fetch("http://localhost:5000/api/playlist/like", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("loggedUser"),
+      },
+      body: data,
+    });
+
+    let d = await res.json();
+    console.log(d);
+  };
+
   useEffect(() => {
     if (currentSong.mp3) {
       setDuration(formatTime(currentSong?.mp3?.duration));
@@ -139,7 +160,7 @@ const SongBar = () => {
             <h3>{currentSong?.title}</h3>
             <span>{currentSong?.artist}</span>
           </div>
-          <AiOutlineHeart />
+          <AiOutlineHeart onClick={addToLiked} />
           <CgScreen />
         </div>
       </div>

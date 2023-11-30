@@ -10,7 +10,16 @@
   }
   .dropdown-menu {
     background: var(--dark);
+    .dropdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     a {
+      font-size: 1rem;
+      span {
+        margin-left: 0.5rem;
+      }
       color: var(--white);
       &:hover {
         color: var(--dark);

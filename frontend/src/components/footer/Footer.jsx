@@ -46,6 +46,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
       <div className="footer__separator"></div>
       <div className="footer__last-ele">
         <h4>&reg; All rights reserved 2023 - Made with 💖</h4>
