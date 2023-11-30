@@ -1,0 +1,24 @@
+.dropdown {
+  outline: none;
+  .btn {
+    outline: none;
+  }
+  .userIcon__btn {
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+  }
+  .dropdown-menu {
+    background: var(--dark);
+    a {
+      color: var(--white);
+      &:hover {
+        color: var(--dark);
+      }
+    }
+    .logout {
+      border-top: 0.01rem solid var(--gray);
+      margin-top: 0.5rem;
+    }
+  }
+}

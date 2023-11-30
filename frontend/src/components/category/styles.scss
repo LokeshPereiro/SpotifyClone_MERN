@@ -16,6 +16,10 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: all 300ms ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 
   .category__img {
     width: 3rem;

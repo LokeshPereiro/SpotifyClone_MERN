@@ -2,15 +2,28 @@ import { FaArrowLeft, FaArrowRight, FaUser } from "react-icons/fa";
 import "./styles.scss";
 import { useSelector } from "react-redux";
 import { useGlobalContext } from "../../context/CurrentSongContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SearchInput from "../search-input/SearchInput";
+import { randomSongs } from "../../constants";
+import Dropdown from "../dropdown/Dropdown";
 
 const Navbar = () => {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
   const location = useLocation();
 
-  const { getLoggedUser } = useGlobalContext();
+  const { filteredSongs, setFilteredSongs, getLoggedUser } = useGlobalContext();
+
+  const handleFilterSongs = (evt) => {
+    const fil = randomSongs.filter((song) => {
+      if (
+        song.title.toLowerCase().includes(evt) ||
+        song.artist.toLowerCase().includes(evt)
+      )
+        return song;
+    });
+    setFilteredSongs(fil);
+  };
 
   useEffect(() => {
     getLoggedUser();
@@ -26,12 +39,16 @@ const Navbar = () => {
             <FaArrowRight />
           </span>
         </div>
-        {location.pathname === "/search" && <SearchInput />}
+        {location.pathname === "/search" && (
+          <SearchInput handleFilterSongs={handleFilterSongs} />
+        )}
       </div>
 
       <div className="home_signings">
         {isAuthenticated ? (
-          <FaUser style={{ color: "#fff" }} />
+          <>
+            <Dropdown />
+          </>
         ) : (
           <>
             <Link to="/signup" className="btn_navbar">

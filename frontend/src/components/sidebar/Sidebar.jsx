@@ -7,8 +7,11 @@ import Signup from "./Signup";
 import { spotify } from "../../constants";
 import SongBar from "../song-bar/SongBar";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isPlaying } = useSelector((state) => state.mainSong);
   return (
     <div className="sidebar">
       <div className="sidebar__home secondary_bg">
@@ -59,8 +62,8 @@ const Sidebar = () => {
         <TbWorld />
         <span>English</span>
       </button>
-      {/* <Signup /> */}
-      <SongBar />
+      {!isAuthenticated && <Signup />}
+      {isPlaying && <SongBar />}
     </div>
   );
 };
